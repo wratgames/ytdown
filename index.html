@@ -87,7 +87,7 @@
           <h1 class="mt-5">Web YouTube Downloader</h1>
           <div class="row justify-content-left">
             <div class="col-12 col-md-12 col-lg-12">
-                <form class="card card-sm">
+                <form onsubmit="return validateCaptcha()" class="card card-sm">
                     <div class="card-body row no-gutters align-items-center">
                         <div class="col-auto">
                             <i class="fas fa-search h4 text-body"></i>
@@ -102,7 +102,9 @@
                         </div>
                         <!--end of col-->
                     </div>
-                </form>
+                <div class="g-recaptcha" data-sitekey="6LdbgWMrAAAAAP3CpM8vvWaN4kA1jpUn-pN6iNf5"></div>
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+     </form>
             </div>
             <!--end of col-->
             </div>

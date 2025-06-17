@@ -1,4 +1,16 @@
 <?php
+$secret = "6LdbgWMrAAAAADcTXYQ2c1HwF3pFXTAa12qcYKHN";
+$response = $_POST["g-recaptcha-response"];
+$remoteip = $_SERVER["REMOTE_ADDR"];
+
+$verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secret}&response={$response}&remoteip={$remoteip}");
+$captcha_success = json_decode($verify);
+
+if (!$captcha_success->success) {
+    die("CAPTCHA failed. Please try again.");
+}
+?>
+
 
     $file = $_SERVER['QUERY_STRING'] ?? null;
 
